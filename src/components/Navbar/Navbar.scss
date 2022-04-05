@@ -1,0 +1,9 @@
+@import '../../styles/general.scss';
+@import '../../styles/variables.scss';
+
+.navbar {
+
+  &__color {
+    @include btn-border($secondary-color, $primary-color);
+  }
+}

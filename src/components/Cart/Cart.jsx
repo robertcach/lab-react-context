@@ -1,7 +1,11 @@
+import { useCartContext } from "../../contexts/CartContext"
+
 const Cart = () => {
+  const { cartItems } = useCartContext()
+
   return (
     <div>
-      Cart
+      {cartItems}
     </div>
   )
 }

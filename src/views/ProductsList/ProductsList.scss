@@ -37,6 +37,10 @@
   }
 
   &__link {
-    @include btn($primary-color, $secondary-color)
+    @include btn($primary-color, $secondary-color);
+
+    &:hover {
+      @include btn-border($secondary-color, $primary-color)
+    }
   }
 }

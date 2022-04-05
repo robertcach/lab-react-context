@@ -1,22 +1,26 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useMemo, useContext, useCallback } from "react";
+
+const CART = "cart";
 
 const CartContext = React.createContext();
 export const useCartContext = () => useContext(CartContext);
 
 export const CartContextProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState(null)
+  const [cartItems, setCartItems] = useState(Number(0))
+  const cartLocalStorage = localStorage.setItem(CART, cartItems )
 
-  const carProductsLocalStorage = localStorage.getItem('cartProducts')
-  const actualPrice = localStorage.getItem()
+  const addCart = useCallback((product) => {
+    setCartItems(cartItems + product)
+  },[cartItems])
 
-  useEffect(() => {
-    localStorage.setItem('cartProducts', JSON.stringify(cartItems))
-  })
 
+  const value = useMemo(() => ({
+    cartItems, addCart
+  }),[cartItems, addCart])
 
   return (
-    <div>
-
-    </div>
+    <CartContext.Provider value={value}>
+      {children}
+    </CartContext.Provider>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeContextProvider } from './contexts/ThemeContext';
+import { CartContextProvider } from './contexts/CartContext';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.scss';
@@ -12,7 +13,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeContextProvider>
-        <App />
+        <CartContextProvider>
+          <App />
+        </CartContextProvider>
       </ThemeContextProvider>
     </BrowserRouter>
   </React.StrictMode>,

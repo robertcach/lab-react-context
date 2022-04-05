@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { useThemeContext } from "./contexts/ThemeContext";
 import Navbar from "./components/Navbar/Navbar";
 import ProductItem from "./views/ProductItem/ProductItem";
-import Shop from "./views/Shop/Shop"
+import ProductsList from "./views/ProductsList/ProductsList"
 import Cart from "./components/Cart/Cart";
 import "./App.scss";
 
@@ -22,7 +22,7 @@ function App() {
       <Navbar />
       <Cart />
       <Routes>
-        <Route path="/" element={<Shop products={products}/>} />
+        <Route path="/" element={<ProductsList products={products}/>} />
         <Route path="/:id" element={<ProductItem />} />
       </Routes>
     </div>
