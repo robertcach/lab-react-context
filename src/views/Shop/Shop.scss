@@ -1,0 +1,41 @@
+@import '../../styles/general.scss';
+@import '../../styles/variables.scss';
+
+
+
+.cards {
+  @include flex(flex, row, wrap, center, center);
+
+  &__single {
+    @include flex(flex, column, wrap, center, center);
+    width: 20%;
+    padding: 10px 20px;
+    margin: 40px 20px;
+    min-height: 500px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
+  }
+
+  &__picture {
+    width: 100%;
+    height: 150px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__info {
+    @include flex(flex, column, wrap, center, center)
+  }
+
+
+  &__price {
+    margin-bottom: 10px
+  }
+
+  &__link {
+    @include btn($primary-color, $secondary-color)
+  }
+}
