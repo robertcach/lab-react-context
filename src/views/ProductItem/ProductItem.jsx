@@ -15,11 +15,7 @@ const ProductItem = () => {
   },[id])
 
   const handleSubmit = () => {
-/*     const { price, image } = product
-    addCart(product) */
-    
-    const productToAdd = product.price
-    addCart(productToAdd) 
+    addCart(product)
   }
 
   return (
