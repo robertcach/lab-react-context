@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     productsList()
       .then((response) => setProducts(response))
-  })
+  }, [])
 
   return (
     <div className={`app bg-${theme}`}>

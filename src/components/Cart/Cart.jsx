@@ -10,8 +10,6 @@ const Cart = () => {
     }, 0)
   }
 
-  /* console.log(cartItems) */
-
   return (
     <div className="cart-item">
     {cartItems && cartItems.map(cartItem => {
